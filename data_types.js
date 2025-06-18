@@ -5,16 +5,16 @@ let value = true; // Boolean -> true or false
 let data ; // undefined 
 let sum = null; //null
 
-console.table([typeof(num) , typeof(str) , typeof(value) , typeof(data) , typeof(sum)]);
+// console.table([typeof(num) , typeof(str) , typeof(value) , typeof(data) , typeof(sum)]);
 // _______________________________________________________________________________________
 // Datatype conversion 
 
 //convert into number
 
 // 1) string -> number
-change_data = Number(sum);
-console.log(typeof(change_data));
-console.log(change_data);// value is not a number NaN
+// change_data = Number(sum);
+// console.log(typeof(change_data));
+// console.log(change_data);// value is not a number NaN
 
 //2) boolean -> number
 //true = 1
@@ -30,9 +30,9 @@ console.log(change_data);// value is not a number NaN
 // convert into string
 
 //num -> string
-let change_data = String(value);
-console.log(typeof(change_data));
-console.log(change_data);
+// let change_data = String(value);
+// console.log(typeof(change_data));
+// console.log(change_data);
 
 //null -> string
 // value = null
@@ -43,3 +43,14 @@ console.log(change_data);
 //boolean -> string
 // value = true or false
 
+// _________________________________
+
+// operation on process 
+
+let a = ( "3" +1 + 2);
+console.log(a);
+console.log(typeof(a));
+
+let b = ( 1 + 2 + "3");
+console.log(b);
+console.log(typeof(b));
