@@ -32,3 +32,14 @@ console.table([a , b, c]);
 // const c = 10; both can give error
 
 //____________________________________________________________
+
+// operation on process 
+
+let A = ( "3" +1 + 2);
+let B = ( 1 + 2 + "3");
+
+console.log(A);
+console.log(typeof(A));
+
+console.log(B);
+console.log(typeof(B));
