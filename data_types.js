@@ -1,20 +1,29 @@
-//types of data types
+
+/* types of data types
+    1) Primitive -> 7types -> use call by value 
+        string  , Number , Boolean  , Null , Undefined , symbole  , BigInt
+    2) Reference or Non primitive -> types 3 -> use call by Reference 
+        Array , objects , Function 
+*/
+
+// Primitive data types 
+
 let num = 15; // Number 
 let str = "Aman" // string
 let value = true; // Boolean -> true or false
 let data ; // undefined 
 let sum = null; //null
 
-// console.table([typeof(num) , typeof(str) , typeof(value) , typeof(data) , typeof(sum)]);
+console.table([typeof(num) , typeof(str) , typeof(value) , typeof(data) , typeof(sum)]);
 // _______________________________________________________________________________________
 // Datatype conversion 
 
 //convert into number
 
 // 1) string -> number
-// change_data = Number(sum);
-// console.log(typeof(change_data));
-// console.log(change_data);// value is not a number NaN
+change_data = Number(sum);
+console.log(typeof(change_data));
+console.log(change_data);// value is not a number NaN
 
 //2) boolean -> number
 //true = 1
@@ -30,9 +39,9 @@ let sum = null; //null
 // convert into string
 
 //num -> string
-// let change_data = String(value);
-// console.log(typeof(change_data));
-// console.log(change_data);
+let change_data = String(value);
+console.log(typeof(change_data));
+console.log(change_data);
 
 //null -> string
 // value = null
