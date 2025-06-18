@@ -45,12 +45,3 @@ let sum = null; //null
 
 // _________________________________
 
-// operation on process 
-
-let a = ( "3" +1 + 2);
-console.log(a);
-console.log(typeof(a));
-
-let b = ( 1 + 2 + "3");
-console.log(b);
-console.log(typeof(b));
