@@ -1,9 +1,13 @@
 
 /* types of data types
-    1) Primitive -> 7types -> use call by value 
-        string  , Number , Boolean  , Null , Undefined , symbole  , BigInt
-    2) Reference or Non primitive -> types 3 -> use call by Reference 
-        Array , objects , Function 
+
+    1)stack(Primitive)  -> 7types -> use call by value pass a copy of the value not raal value
+                                     so the value is not change.
+            Types ->  string  , Number , Boolean  , Null , Undefined , symbole  , BigInt
+
+    2) Heap(Reference or Non primitive) -> types 3 -> use call by Reference pass a address of vareables
+                                                      so value is change back into program.
+             Types->  Array , objects , Function 
 */
 
 // Primitive data types 
