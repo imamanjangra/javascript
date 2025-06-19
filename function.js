@@ -50,8 +50,3 @@ console.log(value(arr));
 
 console.log(value([10 ,20 , 30 , 40]));
 
-let a = 10;
-
-{
-    console.log(a);
-}
