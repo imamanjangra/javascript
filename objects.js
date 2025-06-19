@@ -79,3 +79,10 @@ console.log(users[0].u1name);
 console.log(Object.keys(car))
 console.log(Object.values(car))
 console.log(Object.entries(car))
+
+let u1 = {
+    full_name : "Aman",
+    college_rollnumber : 13,
+}
+let {college_rollnumber : roll} = u1;//simple name 
+console.log(roll)
