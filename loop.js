@@ -138,3 +138,99 @@ arr1.forEach((items , index , arr) => {
     // console.log(items , index , arr)
 })
 
+let obj1 = [
+    {
+        Myname : "Aman",
+        roll : 12
+    },
+    {
+        Myname : "Anuj",
+        roll : 1
+    },
+    {
+        Myname : "tarun",
+        roll : 50
+    }
+    
+]
+
+obj1.forEach( (items) => {
+    // console.log(items.Myname);
+})
+
+// -----------------------filter map -----------------------
+
+let no = [1 , 2, 3, 4, 5 , 6 , 7 ];
+
+// let new_no = no.filter((num) => num > 5 );
+let new_no = no.filter((num) => {
+    return num > 5
+} );
+// console.log(new_no);
+
+// ----------example-----------------
+
+const books = [
+    {
+        b_name : "b1" , publish : 1990 , subject : "Math"
+    },
+    {
+        b_name : "b2" , publish : 1993 , subject : "eco"
+    },
+    {
+        b_name : "b3" , publish : 1999 , subject : "English"
+    },
+    {
+        b_name : "b4" , publish : 1997 , subject : "computer"
+    },
+    {
+        b_name : "b5" , publish : 1991 , subject : "Hindi"
+    },
+    {
+        b_name : "b7" , publish : 1997 , subject : "Hindi"
+    },
+    {
+        b_name : "b2" , publish : 1995 , subject : "Hindi"
+    },
+    {
+        b_name : "b6" , publish : 1992 , subject : "gk"
+    },
+    {
+        b_name : "b7" , publish : 1994 , subject : "gk"
+    },
+]
+let book_data1 = books.filter((bk) => bk.subject == "Hindi");
+let book_data2 = books.filter((bk) => bk.publish == 1997);
+
+// console.log(book_data1);
+// console.log(book_data2);
+
+// ----------------------Mapes-----------------
+
+let no_new = [1 , 2 , 3 , 4 ];
+
+let data = no_new.map( (num) => num> 1);
+let data1 = no_new.map( (num) => num +  10);
+
+// console.log(data);
+// console.log(data1);
+
+// ------------chain methode-----------------
+
+let sdata = no_new
+.map((n) => n /3)
+.map((n) => n * 3)
+// .filter((n) => n > 3)
+// console.log(sdata);
+
+//---------------------reduce-------------------
+
+let reduce_value = no_new.reduce( function (acc , currvalue){
+    console.log(`acc = ${acc} , currentvalue = ${currvalue}`)
+    return acc + currvalue;
+} ,0 )// accumelator vlaue assine 0
+
+let r_v = no_new.reduce((acc , curr) => acc + curr , 0 )// same and easy
+
+console.log(reduce_value);
+console.log(r_v);
