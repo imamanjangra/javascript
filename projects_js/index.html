@@ -6,15 +6,46 @@
     <title>Document</title>
 </head>
 <style>
-    *{
+    body{
         background-color: black;
-        color: white;
-        border: white;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
     }
+    .box{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 30vh;
+        width: 50vw;
+        border: 2px solid white;
+    }
+    #boxes1 , #boxes2 ,#boxes3{
+        height: 10vh;
+        width: 9vw;
+        border: 2px solid white;
+    }
+    #boxes1{
+        background-color: #FF671F;
+    }
+    
+    #boxes2{
+        background-color: #FFFFFF;
+    }
+    
+    #boxes3{
+        background-color:  #046A38;
+    }
+    
 </style>
 <body>
     <div class="box">
-        
+        <div id="boxes1"></div>
+        <div id="boxes2"></div>
+        <div id="boxes3"></div>
+       
     </div>
 </body>
 <script src="simple.js"></script>
