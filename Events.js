@@ -2,7 +2,8 @@ let blue = document.querySelector(".blue");
 let green = document.querySelector(".green");
 let red = document.querySelector(".red");
 let orange = document.querySelector(".orange");
-let boxes = document.querySelector("#boxes")
+let boxes = document.querySelector("#boxes");
+let link = document.querySelector("#link")
 blue.addEventListener("click" , function(e){// Default propogation is false 
     // console.log("Blue was clicked ");
 })
@@ -37,18 +38,32 @@ green.addEventListener("click" , function(e){
 
 // 
 boxes.addEventListener("click" , function(e){
-    console.log("inside the box");
+    // console.log("inside the box");
     
-    e.stopPropagation();// it run only this event on any box if two or more event on same element it remove this on element 
+    // e.stopPropagation();// it run only this event on any box if two or more event on same element it remove this on element 
     // stop bublleing  
 } , true);
 
 green.addEventListener("click" , function(e){
-    console.log("green was clicked ");
+    // console.log("green was clicked ");
 } , true);
 
 // stop propogation 
 
+link.addEventListener("click" ,function(e){
+    // e.preventDefault();
+    // console.log("google was cicked ")
+} , false)
 
 
 
+// Example 
+
+boxes.addEventListener("click" , function(e){
+    // console.log(e.target.tagName);
+    
+    if(e.target.tagName === "DIV"){
+        let removeit = e.target.parentNode
+        // removeit.remove();
+    }
+})
