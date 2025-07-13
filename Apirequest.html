@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        background-color: black;
+        color: white;
+    }
+    .card{
+         line-height: 1.6;
+        font-size: clamp(1rem, 3vw, 2rem);
+        display: flex;
+        justify-content:space-between;
+        border: 2px solid white;    
+        height: auto;
+        width: 53vw;
+    }
+    #username{
+        margin-top: 2vw;
+        text-align: center;
+        margin-left: 8vw;
+        /* border: 2px solid wheat; */
+        height: 4vh;
+        width: 30vw;
+    }
+    #img {
+  margin-top: 5vw;
+  margin-right: 3vw;
+  height: 12vw;
+  width: 13vw;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid white;
+  margin-bottom: 5vw;
+}
+
+#img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+#serch{
+    display: flex;
+}
+#in{
+    height: 5vh;
+    width: 25vw;
+    font-size: clamp(0.4rem, 1vw, 2rem);
+
+}
+#btn{
+    border : 2px solid white;
+    height: auto;
+    width: auto;
+    padding: 5px;
+}
+
+</style>
+<body>
+    <div id="serch">
+        <input id="in" type="text" placeholder="Entre your github username.">
+        <button id="btn">serch</button>
+    </div>
+   <div class="card">
+       <div id="info">
+            <div id="username">username</div>
+            <ol id="od">
+            <li><p id="name">Name = </p></li>
+            <li><p id="address">Address = </p></li>
+            <li><p id="fo_wer">followers = </p></li>
+            <li><p id="fo_wing">following =</p></li>
+            </ol>
+        </div>
+        <div id="img"></div>
+   </div>
+</body>
+
+ <script>
+let btn = document.querySelector("#btn");
+let input = document.querySelector("#in");
+
+btn.addEventListener('click', function () {
+    let value = input.value.trim();
+    if (value === "") return alert("Please enter a GitHub username");
+
+    let request = `https://api.github.com/users/${value}`;
+    let name, add, foll, fowing, username, image;
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', request);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            const data = JSON.parse(this.responseText);
+            name = data.name;
+            add = data.location;
+            foll = data.followers;
+            fowing = data.following;
+            username = data.login;
+            let li = document.querySelectorAll("#od li");
+            let user_name = document.querySelector("#username");
+            let img = document.querySelector("#img");
+            li[0].innerHTML = `Name = ${name}`;
+            li[1].innerHTML = `Address = ${add}`;
+            li[2].innerHTML = `followers = ${foll}`;
+            li[3].innerHTML = `following = ${fowing}`;
+            user_name.innerHTML = `${username}`;
+            img.innerHTML = `<img src="${data.avatar_url}" style="height: 100%; width: 100%; object-fit: cover; border-radius: 10px;">`;
+        } else if (xhr.readyState == 4 && xhr.status != 200) {
+            alert("User not found");
+        }
+    };
+    xhr.send();
+});
+
+
+</script>
+
+</html>
