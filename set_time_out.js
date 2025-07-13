@@ -61,11 +61,14 @@ const changeColor = () => {
 };
 
 startBtn.addEventListener("click", () => {
-  
+  if(!intervalId){
     intervalId = setInterval(changeColor, 1000);
+
+  }
   
 });
 
 stopBtn.addEventListener("click", () => {
   clearInterval(intervalId);
+  intervalId = null;
 });
