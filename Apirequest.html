@@ -90,6 +90,7 @@ btn.addEventListener('click', function () {
 
     let request = `https://api.github.com/users/${value}`;
     let name, add, foll, fowing, username, image;
+    let myname;
 
     const xhr = new XMLHttpRequest();
     xhr.open('GET', request);
