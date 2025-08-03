@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api</title>
+</head>
+
+    
+<body>
+    <img id="dogImage" width="300" />
+</body>
+<script>
+    
+
+    let url = "https://dog.ceo/api/breeds/image/random";
+    let getdata = async ()=>{
+        console.log("getting data........");
+        let request = await fetch(url);
+        let data = await request.json();
+        console.log(data);
+        document.getElementById("dogImage").src = data.message;
+    }
+    getdata()
+
+</script>
+
+</html>
